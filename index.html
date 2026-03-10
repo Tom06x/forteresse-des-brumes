@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forteresse des Brumes - Tower Defense</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="sky-glow"></div>
+    <header class="hero">
+      <h1>Forteresse des Brumes</h1>
+      <p>
+        Defends ton chateau avec une classe heroique, tue les monstres, collecte de l'or et investis dans des
+        ameliorations.
+      </p>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <h2>Classe</h2>
+        <div id="classList" class="class-list"></div>
+
+        <h2>Ameliorations</h2>
+        <div id="upgradeList" class="stack"></div>
+
+        <h2>Micro transactions (simulation)</h2>
+        <p class="small">Paiements fictifs: aucun debit reel.</p>
+        <div id="shopList" class="stack"></div>
+        <button id="convertGemsBtn" class="secondary">Convertir 10 gemmes -> 25 or</button>
+      </section>
+
+      <section class="battle-panel">
+        <div class="hud">
+          <div><span>Vague</span><strong id="wave">1</strong></div>
+          <div><span>Or</span><strong id="gold">0</strong></div>
+          <div><span>Gemmes</span><strong id="gems">0</strong></div>
+          <div><span>Kills</span><strong id="kills">0</strong></div>
+          <div><span>PV Chateau</span><strong id="castleHp">0 / 0</strong></div>
+        </div>
+        <canvas id="battlefield" width="960" height="420"></canvas>
+        <div class="battle-controls">
+          <button id="startBtn">Lancer la run</button>
+          <button id="pauseBtn" class="secondary">Pause</button>
+          <button id="resetBtn" class="danger">Recommencer</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Journal</h2>
+        <div id="log" class="log"></div>
+      </section>
+    </main>
+
+    <section id="relicModal" class="relic-modal hidden">
+      <div class="relic-card">
+        <h3>Relique de run</h3>
+        <p>Choisis une relique (style rogue-like) pour booster ta defense.</p>
+        <div id="relicChoices" class="relic-choices"></div>
+      </div>
+    </section>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
